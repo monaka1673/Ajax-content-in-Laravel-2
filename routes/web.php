@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/admin/result/{questionId}','Admin\ResultController@index');
+
+Route::match(['get','post'],'/admin/result/ajax/{questionId}','Admin\ResultController@ajax');
